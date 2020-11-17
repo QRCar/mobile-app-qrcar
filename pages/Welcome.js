@@ -5,10 +5,11 @@ import { Asset } from 'expo-asset';
 import { Button, ThemeProvider, Image } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+import TopCardLogo from './../components/TopCardLogo.js'
 import GlobalStyles from './../static/GlobalStyles.js'
 
 
-function Welcome({navigation}) {
+export default function Welcome({navigation}) {
 	const theme = {
   		Button: {
     		titleStyle: {
@@ -18,37 +19,32 @@ function Welcome({navigation}) {
 	};
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-		<Image
-		source={{ uri: Asset.fromModule(require('./../assets/logo-qrcar.png')).uri }}
-		style={{ width: 200, height: 200 }}
-		PlaceholderContent={<ActivityIndicator />}
-		/>
+    <View style={GlobalStyles.page }>
+		<TopCardLogo style={
+		{backgroundColor:'#E9E9E9', width:'165%', height:'50%', flex:0, alignItems: 'center',top:'-5%'
+		,marginBottom:'-25%', borderBottomRightRadius:'550%', borderBottomLeftRadius:'550%'}
+		}/>
 
-      	<Text style={GlobalStyles.txt}>Bienvenue sur QRCar</Text>
+      	<Text style={{textAlign:'center', fontSize:30}}>Bienvenue sur{"\n"}QRCar</Text>
       	<ThemeProvider theme={theme}>
 			<Button 
 				onPress={ () => navigation.navigate('Login')}
 				title="Connexion" 
-				iconRight icon={<Icon name="arrow-right" size={15} color="white" />}
+				type="clear"
+				style={GlobalStyles.btn_light}
 			/>
 			
 			<Button 
 				onPress={ () => navigation.navigate('Register')}
 				title="Inscription" 
-				iconRight icon={<Icon name="arrow-right" size={15} color="white" />}
+				type="clear"
+				style={GlobalStyles.btn_dark}
 			/>
 
-			<Button onPress={ () => navigation.navigate('Home')} title="Home" />
-			<Button onPress={ () => navigation.navigate('History')} title="History" />
-			<Button onPress={ () => navigation.navigate('Parameter')} title="Parameter" />
-
-
 		</ThemeProvider>
-      	<Text>Texte commercial</Text>      	
+      	<Text style={{color:'#333332', marginBottom:10}}>Texte commercial</Text>      	
     </View>
   );
 }
 
-export default Welcome;
 

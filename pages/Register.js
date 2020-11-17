@@ -7,39 +7,51 @@ import axios from 'axios'
 import { Button, ThemeProvider, Image } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-
+import ConfidentialityPolicy from './../components/ConfidentialityPolicy.js'
+import TopCardLogo from './../components/TopCardLogo.js'
 import GlobalStyles from './../static/GlobalStyles.js'
 import env from './../static/env.js'
 
 export default function Register({navigation}) {
-	let register_form = {
-		"email":"Email", 
-		"password": "Mot de passe",
-		"lastname":"Nom",
-		"firstname":"Prénom"
-	}
+	const [email,emailChange] = React.useState('')
+	const [password, passwordChange] = React.useState('')
+	const [lastname, lastnameChange] = React.useState('')
+	const [firstname,firstnameChange] = React.useState('')
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    	<Image
-		source={{ uri: Asset.fromModule(require('./../assets/logo-qrcar.png')).uri }}
-		style={{ width: 200, height: 200 }}
-		PlaceholderContent={<ActivityIndicator />}
-		/>
-      	<Text>Inscription</Text>
+    <View style={GlobalStyles.page}>
+    	<TopCardLogo style={
+		{backgroundColor:'#E9E9E9', width:'165%', height:'40%', flex:0, alignItems: 'center',top:'-5%'
+		,marginBottom:'-2%', borderBottomRightRadius:'550%', borderBottomLeftRadius:'550%'}
+		}/>
+      	<Text style={GlobalStyles.h1_title}>Inscription</Text>
 
-      	<TextInput value={register_form.firstname} 
-      	style={GlobalStyles.txt_input}/>
 
-        <TextInput value={register_form.lastname} 
-      	style={GlobalStyles.txt_input}/>
+      	<TextInput value={firstname} 
+      	style={GlobalStyles.txt_input}
+      	placeholder="Prénom"
+        onChangeText={t => firstnameChange(t)}
+        />
 
-      	<TextInput value={register_form.email} 
-      	style={GlobalStyles.txt_input}/>
 
-      	<TextInput value={register_form.password}
-      	style={GlobalStyles.txt_input}/>
+      	<TextInput value={lastname} 
+      	style={GlobalStyles.txt_input}
+      	placeholder="Nom"
+        onChangeText={t => lastnameChange(t)}
+        />
 
+      	<TextInput value={email} 
+      	style={GlobalStyles.txt_input}
+      	placeholder="Email"
+        onChangeText={t => emailChange(t)}
+        />
+
+        <TextInput value={password} 
+      	style={GlobalStyles.txt_input}
+      	placeholder="Mot de passe"
+        onChangeText={t => passwordChange(t)}
+        />
+        <ConfidentialityPolicy/>
       	<Button 
 			onPress={ () => {
 				axios({
@@ -52,12 +64,16 @@ export default function Register({navigation}) {
 			} }
 			title="Créer un compte" 
 			iconRight icon={<Icon name="arrow-right" size={15} color="white" />}
+			titleStyle={{color:'white', marginRight:100}}
+			type="clear"
+			style={[GlobalStyles.btn_dark,{marginTop:4}]}
 		/>
 
 		<Button 
 			onPress={ () => navigation.navigate('Login')}
 			title="Déjà un compte" 
 			type="clear"
+			titleStyle={{color:'#A476EF', marginBottom: '7%'}}
 		/>
     </View>
   );

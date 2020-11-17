@@ -30,12 +30,13 @@ export default StyleSheet.create({
 	h1_title : {
 		fontSize:19,
 		fontWeight: 'bold',
-		marginBottom: '2%',
+		marginBottom: '10%',
 	},
 	h3_title : {
 		color: '#333332',
 		fontSize: 14,
 		marginTop:'5%',
+		marginBottom:5,
 	},
 	page : {
 		paddingLeft:'5%',

@@ -18,7 +18,7 @@ const list_item = data => data.map((e) => {
 		                <Text style={{ fontSize: 11, color:'#99998' }}>{e.date}</Text>
 	                </View>
                 </View>
-                <DisplayCost cost={e.cost} fontSizeEuro="24" fontSizeCent="12"/>
+                <DisplayCost cost={e.cost} fontSizeEuro="24" fontSizeCent="12" fontSizeIco="14"/>
             </View>
         )
     })

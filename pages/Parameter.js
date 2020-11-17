@@ -61,7 +61,6 @@ export default function Parameter({navigation}) {
 	            buttonStyle={{alignSelf:'flex-start'}}
 	        />
         </View>
-        
 
         </View>
         <Navbar navigation={navigation} currentComponent="Parameter"/>

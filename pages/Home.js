@@ -3,6 +3,7 @@ import { View, Text, Button, Image } from 'react-native';
 
 import Navbar from './../components/Navbar.js'
 import ShortHistory from './../components/ShortHistory.js'
+import ChartCost from './../components/ChartCost.js'
 import DisplayCost from './../components/DisplayCost.js'
 import GlobalStyles from './../static/GlobalStyles.js'
 
@@ -14,16 +15,24 @@ export default function Home({navigation}) {
         
         <Text style={GlobalStyles.h3_title, {alignSelf:'flex-start'}}>Dépenses ce mois-ci</Text>
         
-        <DisplayCost style={{transform: [{ translateX: 10 }] }} cost="124.20" fontSizeEuro="36" fontSizeCent="26"/>
+        <DisplayCost style={{transform: [{ translateX: 10 }] }} cost="124.20" fontSizeEuro="56" fontSizeCent="36" fontSizeIco="48"/>
 
         <Text style={GlobalStyles.h3_title, {alignSelf:'flex-start'}}>Dépenses par mois</Text>
         
-        <Image
-        style={{width: '100%', height: '25%'}}
-        source={{
-          uri: 'https://image-charts.com/chart?chbh=a&chbr=10&chco=fdb45c%2C27c9c2%2C1869b7&chd=t%3A5%2C5%2C5%7C10%2C10%2C10%7C15%2C15%2C15&chds=0%2C120&chm=N%2C000000%2C0%2C%2C10%7CN%2C000000%2C1%2C%2C10%7CN%2C000000%2C2%2C%2C10&chma=0%2C0%2C10%2C10&chs=700x150&cht=bvg&chxs=0%2C000000%2C0%2C0%2C_&chxt=y',
-        }}
-      	/>
+        <ChartCost data={
+          [{mouth:"January",value:328},
+          {mouth:"February",value:156},
+          {mouth:"March",value:80},
+          {mouth:"April",value:249},
+          {mouth:"May",value:167},
+          {mouth:"June",value:508},
+          {mouth:"July",value:508},
+          {mouth:"August",value:508},
+          {mouth:"September",value:508},
+          {mouth:"October",value:508},
+          {mouth:"November",value:508},
+          {mouth:"December",value:124}]
+        }/>
 
        	<Text style={GlobalStyles.h3_title, {alignSelf:'flex-start'}}>Dernières dépenses</Text>
        	<ShortHistory data={data_history} />

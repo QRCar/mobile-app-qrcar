@@ -9,7 +9,7 @@ let list_item = data => data.map(e => {
 						<Text style={{ fontSize: 18 }}>{e.location}</Text>
 						<Text style={{ fontSize: 16, color: '#999998' }}>{e.date}</Text>
 					</View>
-					<DisplayCost cost={e.cost} fontSizeEuro="24" fontSizeCent="12"/>
+					<DisplayCost cost={e.cost} fontSizeEuro="24" fontSizeCent="12" fontSizeIco="18"/>
 				</View>
 			)
 		})

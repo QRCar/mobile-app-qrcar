@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text,TextInput, Alert, ActivityIndicator} from 'react-native';
+import { View, Text,TextInput, Alert, ActivityIndicator, ScrollView} from 'react-native';
 import { Asset } from 'expo-asset';
 
 import axios from 'axios'
@@ -13,7 +13,16 @@ import env from './../static/env.js'
 export default function CarLicencePlate({navigation}) {
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={GlobalStyles.page}>
+    	<ScrollView>	
+    		<View style={{}}>
+    			<Text>Test</Text>
+    		</View>
+    		<View style={{}}>
+    			<Text>Test</Text>
+    		</View>
+    	</ScrollView>
+    	<Button title="Enregistrer une nouvelle voiture"/>
 
       	     	
     </View>

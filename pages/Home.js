@@ -13,28 +13,15 @@ export default function Home({navigation}) {
     <View style={GlobalStyles.page}>
         <Text style={GlobalStyles.h1_title}>Accueil</Text>
         
-        <Text style={GlobalStyles.h3_title, {alignSelf:'flex-start'}}>Dépenses ce mois-ci</Text>
+        <Text style={[GlobalStyles.h3_title, {alignSelf:'flex-start'}]}>Dépenses ce mois-ci</Text>
         
         <DisplayCost style={{transform: [{ translateX: 10 }] }} cost="124.20" fontSizeEuro="56" fontSizeCent="36" fontSizeIco="48"/>
 
-        <Text style={GlobalStyles.h3_title, {alignSelf:'flex-start'}}>Dépenses par mois</Text>
+        <Text style={[GlobalStyles.h3_title, {alignSelf:'flex-start'}]}>Dépenses par mois</Text>
         
-        <ChartCost data={
-          [{mouth:"January",value:328},
-          {mouth:"February",value:156},
-          {mouth:"March",value:80},
-          {mouth:"April",value:249},
-          {mouth:"May",value:167},
-          {mouth:"June",value:508},
-          {mouth:"July",value:508},
-          {mouth:"August",value:508},
-          {mouth:"September",value:508},
-          {mouth:"October",value:508},
-          {mouth:"November",value:508},
-          {mouth:"December",value:124}]
-        }/>
+        <ChartCost datas={{ values:[ 10, 5, 50, 15, 20 ], labels:[ "January", "February", "March", "April", "May" ] } }/>
 
-       	<Text style={GlobalStyles.h3_title, {alignSelf:'flex-start'}}>Dernières dépenses</Text>
+       	<Text style={[GlobalStyles.h3_title, {alignSelf:'flex-start'}]}>Dernières dépenses</Text>
        	<ShortHistory data={data_history} />
        	<Navbar navigation={navigation} currentComponent="Home"/>
     </View>

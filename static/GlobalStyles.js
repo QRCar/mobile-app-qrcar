@@ -33,9 +33,9 @@ export default StyleSheet.create({
 		marginBottom: '10%',
 	},
 	h3_title : {
-		color: '#333332',
+		color: '#999999',
 		fontSize: 14,
-		marginTop:'5%',
+		marginTop:'2%',
 		marginBottom:5,
 	},
 	page : {

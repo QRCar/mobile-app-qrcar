@@ -20,10 +20,8 @@ export default function Welcome({navigation}) {
 
   return (
     <View style={GlobalStyles.page }>
-		<TopCardLogo style={
-		{backgroundColor:'#E9E9E9', width:'165%', height:'50%', flex:0, alignItems: 'center',top:'-5%'
-		,marginBottom:'-25%', borderBottomRightRadius:'550%', borderBottomLeftRadius:'550%'}
-		}/>
+		<TopCardLogo style={ { width:'165%', height:'50%',top:'-10%', marginBottom:'-25%'} }/>
+		
 
       	<Text style={{textAlign:'center', fontSize:30}}>Bienvenue sur{"\n"}QRCar</Text>
       	<ThemeProvider theme={theme}>
@@ -31,14 +29,14 @@ export default function Welcome({navigation}) {
 				onPress={ () => navigation.navigate('Login')}
 				title="Connexion" 
 				type="clear"
-				style={GlobalStyles.btn_light}
+				buttonStyle={GlobalStyles.btn_light}
 			/>
 			
 			<Button 
 				onPress={ () => navigation.navigate('Register')}
 				title="Inscription" 
 				type="clear"
-				style={GlobalStyles.btn_dark}
+				buttonStyle={GlobalStyles.btn_dark}
 			/>
 
 		</ThemeProvider>

@@ -2,6 +2,8 @@ import * as React from 'react';
 import { View, Text, ScrollView, ActivityIndicator} from 'react-native';
 import { Image } from 'react-native-elements';
 
+import DisplayCost from './../components/DisplayCost.js'
+
 const list_item = data => data.map((e) => {
         return (
             <View key={e.toString()} style={{ marginTop:'1%', marginBottom:'2%',flex: 1, alignItems: 'center', justifyContent: 'space-between', flexDirection:'row' }}>
@@ -16,7 +18,7 @@ const list_item = data => data.map((e) => {
 		                <Text style={{ fontSize: 11, color:'#99998' }}>{e.date}</Text>
 	                </View>
                 </View>
-                <Text style={{ fontSize: 24 }}>{e.cost}</Text>
+                <DisplayCost cost={e.cost} fontSizeEuro="24" fontSizeCent="12"/>
             </View>
         )
     })

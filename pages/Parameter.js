@@ -38,7 +38,7 @@ export default function Parameter({navigation}) {
 	            title="Plaque d'immatriculation" 
 	            icon={<Icon name="car" size={30} color="#323232"/>}
 	            titleStyle={style.title_btn}
-	            style={{alignSelf:'flex-start'}}
+	            buttonStyle={{alignSelf:'flex-start'}}
 	        />
         </View>
         <View style={style.item_view}>
@@ -48,7 +48,7 @@ export default function Parameter({navigation}) {
 	            title="Information personnelles" 
 	            icon={<Icon name="user" size={30} color="#323232" />}
 	            titleStyle={style.title_btn}
-	            style={{alignSelf:'flex-start'}}
+	            buttonStyle={{alignSelf:'flex-start'}}
 	        />
 	    </View>
 	    <View style={style.item_view}>
@@ -58,7 +58,7 @@ export default function Parameter({navigation}) {
 	            title="Déconnexion" 
 	            icon={<Icon name="sign-out" size={30} color="red" />}
 	            titleStyle={{...style.title_btn,color:'#C90000'}}
-	            style={{alignSelf:'flex-start'}}
+	            buttonStyle={{alignSelf:'flex-start'}}
 	        />
         </View>
         

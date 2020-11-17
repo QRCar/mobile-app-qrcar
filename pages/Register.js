@@ -20,10 +20,8 @@ export default function Register({navigation}) {
 
   return (
     <View style={GlobalStyles.page}>
-    	<TopCardLogo style={
-		{backgroundColor:'#E9E9E9', width:'165%', height:'40%', flex:0, alignItems: 'center',top:'-5%'
-		,marginBottom:'-2%', borderBottomRightRadius:'550%', borderBottomLeftRadius:'550%'}
-		}/>
+    	<TopCardLogo style={ { width:'165%', height:'40%',top:'-5%', marginBottom:'-2%'} }/>
+    	
       	<Text style={GlobalStyles.h1_title}>Inscription</Text>
 
 
@@ -66,7 +64,7 @@ export default function Register({navigation}) {
 			iconRight icon={<Icon name="arrow-right" size={15} color="white" />}
 			titleStyle={{color:'white', marginRight:100}}
 			type="clear"
-			style={[GlobalStyles.btn_dark,{marginTop:4}]}
+			buttonStyle={[GlobalStyles.btn_dark,{marginTop:4}]}
 		/>
 
 		<Button 

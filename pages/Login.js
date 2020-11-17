@@ -18,10 +18,7 @@ function Login({navigation}) {
 
   	return (
     <View style={GlobalStyles.page }>
-		<TopCardLogo style={
-		{backgroundColor:'#E9E9E9', width:'165%', height:'45%', flex:0, alignItems: 'center',top:'-5%'
-		,marginBottom:'-5%', borderBottomRightRadius:'550%', borderBottomLeftRadius:'550%'}
-		}/>
+		<TopCardLogo style={ { width:'165%', height:'45%',top:'-5%' ,marginBottom:'-5%'} }/>
       	<Text style={GlobalStyles.h1_title}>Connexion</Text>
 
       	<TextInput value={email} 
@@ -53,7 +50,7 @@ function Login({navigation}) {
 			iconRight icon={<Icon name="arrow-right" size={15} color="white" />}
 			titleStyle={{color:'white', marginRight:100}}
 			type="clear"
-			style={GlobalStyles.btn_dark}
+			buttonStyle={GlobalStyles.btn_dark}
 		/>
 
 		<Button 

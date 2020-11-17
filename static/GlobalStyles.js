@@ -43,7 +43,7 @@ export default StyleSheet.create({
 		paddingTop:'5%',
 		flex:1,
 		alignItems: 'center',
-		justifyContent: 'space-between',
+		justifyContent: 'space-evenly',
 		flexDirection:'column',
 		flexWrap:'nowrap',
 		backgroundColor:'white'

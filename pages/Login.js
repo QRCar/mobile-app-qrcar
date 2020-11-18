@@ -21,19 +21,19 @@ function Login({navigation}) {
 		<TopCardLogo style={ { width:'165%', height:'45%',top:'-5%' ,marginBottom:'-5%'} }/>
       	<Text style={GlobalStyles.h1_title}>Connexion</Text>
 
-      	<TextInput value={email} 
-      	style={GlobalStyles.txt_input}
-      	placeholder="Email"
-        onChangeText={t => emailChange(t)}
+      	<TextInput value={email}
+          style={GlobalStyles.txt_input}
+          placeholder="Email"
+          onChangeText={t => emailChange(t)}
         />
 
       	<TextInput value={password}
-      	style={GlobalStyles.txt_input}
-      	placeholder="Mot de Passe"
-      	onChangeText={t => passwordChange(t)}
+          style={GlobalStyles.txt_input}
+          placeholder="Mot de Passe"
+          onChangeText={t => passwordChange(t)}
       	/>
       	<ConfidentialityPolicy/>
-      	<Button 
+      	<Button
 			onPress={ () => {
 				axios({
 					method: 'post',
@@ -46,22 +46,20 @@ function Login({navigation}) {
 				})
 				.catch(err => {Alert.alert(`Response status : ${err.toString()}`)})
 			}}
-			title="Se Connecter" 
+			title="Se Connecter"
 			iconRight icon={<Icon name="arrow-right" size={15} color="white" />}
 			titleStyle={{color:'white', marginRight:100}}
 			type="clear"
 			buttonStyle={GlobalStyles.btn_dark}
 		/>
 
-		<Button 
+		<Button
 			onPress={ () => navigation.navigate('Register')}
-			title="Créer un compte" 
+			title="Créer un compte"
 			type="clear"
 			titleStyle={{color:'#A476EF', marginBottom: '7%'}}
 		/>
-      	
 
-      	     	
     </View>
   );
 }

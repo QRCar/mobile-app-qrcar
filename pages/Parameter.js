@@ -4,8 +4,6 @@ import { View, Text, ScrollView, ActivityIndicator, StyleSheet} from 'react-nati
 import { Button, ThemeProvider, Image } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import FullHistory from './../components/FullHistory.js'
-
 import Navbar from './../components/Navbar.js'
 import GlobalStyles from './../static/GlobalStyles.js'
 
@@ -32,30 +30,30 @@ export default function Parameter({navigation}) {
         <Text style={GlobalStyles.h1_title}>Paramètres</Text>
         <View style={{width:'100%', flex:1, justifyContent:'flex-start',alignItems: 'center'}}>
         <View style={style.item_view}>
-	        <Button 
+	        <Button
 	            type="clear"
 	            onPress={ () => navigation.navigate('CarLicencePlate')}
-	            title="Plaque d'immatriculation" 
+	            title="Plaque d'immatriculation"
 	            icon={<Icon name="car" size={30} color="#323232"/>}
 	            titleStyle={style.title_btn}
 	            buttonStyle={{alignSelf:'flex-start'}}
 	        />
         </View>
         <View style={style.item_view}>
-	        <Button 
+	        <Button
 	            type="clear"
 	            onPress={ () => navigation.navigate('PersonalData')}
-	            title="Information personnelles" 
+	            title="Information personnelles"
 	            icon={<Icon name="user" size={30} color="#323232" />}
 	            titleStyle={style.title_btn}
 	            buttonStyle={{alignSelf:'flex-start'}}
 	        />
 	    </View>
 	    <View style={style.item_view}>
-	        <Button 
+	        <Button
 	            type="clear"
 	            onPress={ () => navigation.navigate('Welcome')}
-	            title="Déconnexion" 
+	            title="Déconnexion"
 	            icon={<Icon name="sign-out" size={30} color="red" />}
 	            titleStyle={{...style.title_btn,color:'#C90000'}}
 	            buttonStyle={{alignSelf:'flex-start'}}

@@ -30,7 +30,8 @@ export default StyleSheet.create({
 	h1_title : {
 		fontSize:19,
 		fontWeight: 'bold',
-		marginBottom: '10%',
+		marginBottom: '5%',
+		marginTop: '5%',
 	},
 	h3_title : {
 		color: '#999999',

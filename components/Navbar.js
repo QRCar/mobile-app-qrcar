@@ -21,7 +21,7 @@ const style = StyleSheet.create({
     flexDirection:'row', 
     alignItems:'center',
     justifyContent: 'space-around',
-    marginBottom: 2,
+    marginBottom: 10,
     alignSelf:'center',
   },
   title_btn:{

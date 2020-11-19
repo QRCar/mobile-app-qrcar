@@ -6,6 +6,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import Navbar from './../components/Navbar.js'
 import GlobalStyles from './../static/GlobalStyles.js'
+import global from './../static/global.js'
 
 const style = StyleSheet.create({
 	title_btn:{
@@ -33,7 +34,7 @@ export default function Parameter({navigation}) {
 	        <Button
 	            type="clear"
 	            onPress={ () => navigation.navigate('CarLicencePlate')}
-	            title="Plaque d'immatriculation"
+	            title="Ajouter une immatriculation"
 	            icon={<Icon name="car" size={30} color="#323232"/>}
 	            titleStyle={style.title_btn}
 	            buttonStyle={{alignSelf:'flex-start'}}
@@ -52,7 +53,7 @@ export default function Parameter({navigation}) {
 	    <View style={style.item_view}>
 	        <Button
 	            type="clear"
-	            onPress={ () => navigation.navigate('Welcome')}
+	            onPress={ () => {global.user.id=null;navigation.navigate('Welcome')}}
 	            title="Déconnexion"
 	            icon={<Icon name="sign-out" size={30} color="red" />}
 	            titleStyle={{...style.title_btn,color:'#C90000'}}
@@ -61,6 +62,7 @@ export default function Parameter({navigation}) {
         </View>
 
         </View>
+
         <Navbar navigation={navigation} currentComponent="Parameter"/>
     </View>
 	);

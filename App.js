@@ -9,6 +9,7 @@ import Parameter from './pages/Parameter.js'
 import Register from './pages/Register.js'
 import Welcome from './pages/Welcome.js'
 import Home from './pages/Home.js'
+import Redirect from './pages/Redirect.js'
 import CarLicencePlate from './pages/CarLicencePlate.js'
 import PersonalData from './pages/PersonalData.js'
 
@@ -18,12 +19,13 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Welcome" screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Redirect" component={Redirect} />
+        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="History" component={History} />
         <Stack.Screen name="Parameter" component={Parameter}/>
         <Stack.Screen name="PersonalData" component={PersonalData} options={{headerShown:true}}/>
-        <Stack.Screen name="CarLicencePlate" component={CarLicencePlate} options={{headerShown:true}}/>
-        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="CarLicencePlate" component={CarLicencePlate} options={{headerShown:true, title:'Scanne Ta Plaque'}}/>
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="Welcome" component={Welcome} />
       </Stack.Navigator>

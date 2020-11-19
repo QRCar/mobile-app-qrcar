@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { View, Text,TextInput, Alert, ActivityIndicator} from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { Asset } from 'expo-asset';
 
 import axios from 'axios'
@@ -11,13 +12,14 @@ import TopCardLogo from './../components/TopCardLogo.js'
 import ConfidentialityPolicy from './../components/ConfidentialityPolicy.js'
 import GlobalStyles from './../static/GlobalStyles.js'
 import env from './../static/env.js'
+import global from './../static/global.js'
 
 function Login({navigation}) {
 	const [email,emailChange] = React.useState('')
 	const [password, passwordChange] = React.useState('')
 
   	return (
-    <View style={GlobalStyles.page }>
+    <KeyboardAwareScrollView resetScrollToCoords={{ x: 0, y: 0 }} scrollEnabled={true} contentContainerStyle={GlobalStyles.page}>
 		<TopCardLogo style={ { width:'165%', height:'45%',top:'-5%' ,marginBottom:'-5%'} }/>
       	<Text style={GlobalStyles.h1_title}>Connexion</Text>
 
@@ -36,15 +38,15 @@ function Login({navigation}) {
       	<Button
 			onPress={ () => {
 				axios({
-					method: 'post',
-					url: `${env.URL_API}/auth`,
-					data: {email:email,password:password}
+					method: 'get',
+					url: `${env.USER_URL_API}/api/users`
 				})
 				.then(res => {
-					Alert.alert(`Response status : ${res.status.toString()}`)
-					navigation.navigate('Home')
+					res.data.data.map(e=>e.email==email ? global.user.id=e.id : {})
+					global.user.id ? navigation.navigate('Home') : Alert.alert("Login invalid")
+				}).catch(err => {
+					Alert.alert(`Response status : ${err.toString()}`)
 				})
-				.catch(err => {Alert.alert(`Response status : ${err.toString()}`)})
 			}}
 			title="Se Connecter"
 			iconRight icon={<Icon name="arrow-right" size={15} color="white" />}
@@ -60,7 +62,7 @@ function Login({navigation}) {
 			titleStyle={{color:'#A476EF', marginBottom: '7%'}}
 		/>
 
-    </View>
+    </KeyboardAwareScrollView>
   );
 }
 export default Login;

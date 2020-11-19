@@ -18,7 +18,8 @@ function insertCar(license_number){
 function upload (image) {
     var formData = new FormData();
     formData.append('picture_car', {
-      uri: Platform.OS === 'android' ? `file:///${image.uri}` : image.uri,
+      uri: Platform.OS === "android" ? image.uri : image.uri.replace("file://", ""),
+      
       type: 'image/jpeg',
       name: 'image.jpg',
     });
@@ -83,7 +84,7 @@ const mainView = () => {
               ],
               { cancelable: false } );
             })
-            .catch(err => {Alert.alert(`Response status : ${err.toString()}`)})
+            .catch(err => {Alert.alert(`Error : ${err.toString()}`)})
           }
         }}>
         <View style={{ borderWidth: 2, borderRadius: 50, borderColor: 'white', height: 50, width: 50, display: 'flex', justifyContent: 'center', alignItems: 'center' }} >

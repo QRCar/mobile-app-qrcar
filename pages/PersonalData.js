@@ -35,7 +35,7 @@ let plate_list = data => data.map((e,i) => {
 		<Button
 			key={`${e.toString()}${i}`}
 	        type="clear"
-	        onPress={ () => navigation.navigate('PersonalData')}
+	        onPress={ () => {}}
 	        title={e}
 	        icon={<Icon name="trash" size={30} color="#C90000" />}
 	        iconRight

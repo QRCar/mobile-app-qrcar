@@ -86,8 +86,8 @@ const mainView = () => {
             .catch(err => {Alert.alert(`Response status : ${err.toString()}`)})
           }
         }}>
-        <View style={{ borderWidth: 2, borderRadius: '50%', borderColor: 'white', height: 50, width: 50, display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
-          <View style={{ borderWidth: 2, borderRadius: '50%', borderColor: 'white', height: 40, width:40, backgroundColor: 'white'}} />
+        <View style={{ borderWidth: 2, borderRadius: 50, borderColor: 'white', height: 50, width: 50, display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
+          <View style={{ borderWidth: 2, borderRadius: 50, borderColor: 'white', height: 40, width:40, backgroundColor: 'white'}} />
         </View>
         </TouchableOpacity>
       </View>;
